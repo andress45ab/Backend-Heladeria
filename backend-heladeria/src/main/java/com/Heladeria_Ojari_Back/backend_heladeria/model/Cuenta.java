@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import java.util.Set;
 
 @Entity
-@Table(name="cuentas",uniqueConstraints = @UniqueConstraint(columnNames = "username"))
+@Table(name="cuentas",uniqueConstraints = @UniqueConstraint(columnNames = "usuario"))
 public class Cuenta{
     //id de la cuenta
     @Id
@@ -23,7 +23,7 @@ public class Cuenta{
     //para mas seguridad
     @NotBlank(message="La contraseña no puede estar vacia")
     @Column(nullable=false)
-    private String contraseña;
+    private String contrasena;
 
     //roles de cada cuenta
 
@@ -45,7 +45,7 @@ public class Cuenta{
     }
 
     public String getContraseña() {
-        return contraseña;
+        return contrasena;
     }
 
     public Set<Rol> getRoles() {
@@ -61,7 +61,7 @@ public class Cuenta{
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public void setRoles(Set<Rol> roles) {
